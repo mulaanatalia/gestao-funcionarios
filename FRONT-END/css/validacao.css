@@ -1,0 +1,9 @@
+.errorInput{
+color: red ;
+
+/* background: white; */
+}
+
+input {
+    border-color: red;
+}

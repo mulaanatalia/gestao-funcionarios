@@ -1,0 +1,34 @@
+@page {
+    margin: 16px;
+    font-family: Cambria, Georgia, serif;
+}
+
+td {
+    color: black;
+}
+table#tab2{
+    background-color:#E8E8E8;
+    width: 100%;
+    margin: 0 auto;
+}
+/* 
+#conteudo {
+    display: flex !important; 
+    flex-direction: row !important; 
+    justify-content: space-between !important; 
+    background-color: red ;
+}
+
+#grupo1 {
+    padding-right: 20px;
+    background-color: aqua;
+    width: 30%;
+}
+
+
+#grupo2 {
+    display: inline-block;
+    background-color: rgb(26, 62, 62);
+    width: 20%;
+
+} */

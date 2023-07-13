@@ -1,0 +1,196 @@
+<?php
+@session_start();
+
+
+
+?>
+<style>
+    .nav-item:hover {
+        background-color: #4caf50;
+    }
+
+    .nav-item:hover span,
+    .nav-item:hover i {
+        color: #fff !important;
+    }
+
+    .nav-item-active {
+        background-color: #4caf50;
+    }
+
+    .nav-item-active-text {
+        background-color: #4caf50;
+        color: #fff !important;
+    }
+</style>
+
+<script>
+    // Obtém o nome da página atual
+    var currentPage = window.location.pathname.split('/').pop();
+
+    // Função para marcar o menu ativo
+    function markActiveMenu(menuId) {
+        var menuItem = document.getElementById(menuId);
+        if (menuItem) {
+            menuItem.classList.add('nav-item-active');
+        }
+    }
+
+    // Marca o menu ativo com base na página atual
+    if (currentPage === 'listagem_funcionarios.php') {
+        markActiveMenu('listagem_funcionarios_li');
+    } else if (currentPage === 'listagem_marcacoes.php') {
+        markActiveMenu('marcacoes_li');
+    } else if (currentPage === 'listagem_presencas.php') {
+        markActiveMenu('presencas_li');
+    } else if (currentPage === 'listagem_treinamentos.php') {
+        markActiveMenu('treinamentos_li');
+    } else if (currentPage === 'dashboard1.php') {
+        markActiveMenu('dashboard_li');
+    }
+    // Adicione mais condições para os outros menus conforme necessário
+
+</script>
+
+<div class="main-header">
+    <div class="logo" style="width: 100px;">
+        <h1 class="" style="color: rgb(76, 175, 80); font-family: 'Unbounded'; font-size: 20px!important; padding: 12px 8px; align-items: center;">INATRO</h1>
+    </div>
+    <div class="menu-toggle">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div style="margin: auto"></div>
+    <div class="header-part-right">
+        <div>
+            <h3>Coordenador</h3>
+        </div>
+        <i class="i-Full-Screen header-icon d-none d-sm-inline-block" data-fullscreen></i>
+
+        <!-- User avatar dropdown -->
+        <div class="dropdown">
+            <div class="user col align-self-end">
+                <img src="./dist-assets/images/user.png" id="userDropdown" alt="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                    <div class="dropdown-header">
+                        <i class="i-Lock-User mr-1"></i> Coordenador
+                    </div>
+                    <!-- <a class="dropdown-item" data-toggle="modal" data-target="#myModal">Alteração Senha</a> -->
+                    <button type="button" class="dropdown-item" data-toggle="modal" data-target="#myModal">
+                        Alterar Senha
+                    </button>
+                    <!-- <a class="dropdown-item">Billing history</a> -->
+                    <a class="dropdown-item" href="./index.php">Sair</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="side-content-wrap">
+    <div class="sidebar-left open rtl-ps-none" data-perfect-scrollbar="" data-suppress-scroll-x="true">
+        <ul class="navigation-left">
+            <li class="nav-item" id="listagem_funcionarios_li">
+                <a class="nav-item-hold" href="./listagem_funcionarios.php" id="listagem_funcionarios_link">
+                    <i class="nav-icon fas fa-user"></i>
+                    <span class="nav-text" style="font-size: 14px;">Funcionarios</span>
+                </a>
+                <div class="triangle"></div>
+            </li>
+
+            <li class="nav-item" id="marcacoes_li" data-item="funcionario_group">
+                <a class="nav-item-hold" href="./listagem_marcacoes.php" id="marcacoes_link">
+                    <i class="nav-icon fas fa-list"></i>
+                    <span class="nav-text" style="font-size: 14px;">Parametrizações</span>
+                </a>
+                <div class="triangle"></div>
+            </li>
+
+            <li class="nav-item" id="presencas_li" >
+                <a class="nav-item-hold" href="./listagem_presencas.php" id="marcacoes_link">
+                    <!--<i class="nav-icon fas fa-list"></i>-->
+                    <i class="nav-icon fas fa-book"></i>
+                    <span class="nav-text" style="font-size: 14px;">Presenças</span>
+                </a>
+                <div class="triangle"></div>
+            </li>
+
+            <li class="nav-item" id="treinamentos_li" >
+                <a class="nav-item-hold" href="./listagem_treinamentos.php" id="marcacoes_link">
+                <i class="nav-icon fas fa-graduation-cap"></i>
+                    <span class="nav-text" style="font-size: 14px;">Treinamentos</span>
+                </a>
+                <div class="triangle"></div>
+            </li>
+
+            <li class="nav-item" id="dashboard_li" >
+                <a class="nav-item-hold" href="./dashboard1.php" id="marcacoes_link">
+                <i class="nav-icon fas fa-chart-line"></i>
+                    <span class="nav-text" style="font-size: 14px;">Dashboard</span>
+                </a>
+                <div class="triangle"></div>
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-item-hold" href="./index.php">
+                    <!-- <i class="nav-icon i-File-Horizontal-Text"></i> -->
+                    <i class="nav-icon fas fa-door-open"></i>
+                    <span class="nav-text" style="font-size: 14px;">Sair</span>
+                </a>
+                <div class="triangle"></div>
+            </li>
+
+        </ul>
+    </div>
+    <div class="sidebar-left-secondary rtl-ps-none" data-perfect-scrollbar="" data-suppress-scroll-x="true">
+        <ul class="childNav" data-parent="funcionario_group">
+            <li class="nav-item" id="li_escolas">
+                <a class="nav-item-hold" href="list_escolas.php" id="escolas_link">
+                    <i class="nav-icon i-Home-Window"></i>
+                    <span class="nav-text" style="font-size: 14px;">Departamento</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="sidebar-overlay"></div>
+</div>
+<?php include_once './components/modals/modal_change_pass.php'; ?>
+<!-- <script src="./js/api_queries.js"></script> -->
+<script src="./dist-assets/js/scripts/sweetalert2@11.js"></script>
+<script>
+    function verificarSenhas(e) {
+        var novaSenha = document.getElementById("novaSenha").value;
+        var confirmarSenha = document.getElementById("confirmarSenha").value;
+
+        if (novaSenha === confirmarSenha) {
+            submitForm(e, "change_pass", "change_pass/create.php");
+            // As senhas são iguais
+            // Swal.fire({
+            //     icon: 'success',
+            //     title: 'Sucesso!',
+            //     text: 'As senhas conferem. Você pode prosseguir.',
+            //     showConfirmButton: false,
+            //     timer: 1500,
+            // }).then(() => {
+            // });
+        } else {
+            // As senhas são diferentes
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'As senhas não conferem. Por favor, verifique novamente.',
+                confirmButtonText: 'OK'
+            }).then(() => {});
+        }
+    }
+
+    function togglePassword(inputId) {
+        var input = document.getElementById(inputId);
+        if (input.type === "password") {
+            input.type = "text";
+        } else {
+            input.type = "password";
+        }
+    }
+</script>
